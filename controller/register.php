@@ -24,26 +24,7 @@ include('database.php');
 		$count        = $check->num_rows;
 		
 		
-		$image1 = addslashes(file_get_contents($_FILES['valid_id']['tmp_name']));
-		$image_name = addslashes($_FILES['valid_id']['name']);
-		$image_size = getimagesize($_FILES['valid_id']['tmp_name']);
-		move_uploaded_file($_FILES["valid_id"]["tmp_name"], "../admin/assets/documents/" . $_FILES["valid_id"]["name"]);
-		$location1   =  $_FILES["valid_id"]["name"];
 		
-	
-		$image2 = addslashes(file_get_contents($_FILES['business_permit']['tmp_name']));
-		$image_name = addslashes($_FILES['business_permit']['name']);
-		$image_size = getimagesize($_FILES['business_permit']['tmp_name']);
-		move_uploaded_file($_FILES["business_permit"]["tmp_name"], "../admin/assets/documents/" . $_FILES["business_permit"]["name"]);
-		$location2   =  $_FILES["business_permit"]["name"];
-	
-	
-		$image3 = addslashes(file_get_contents($_FILES['proof']['tmp_name']));
-		$image_name = addslashes($_FILES['proof']['name']);
-		$image_size = getimagesize($_FILES['proof']['tmp_name']);
-		move_uploaded_file($_FILES["proof"]["tmp_name"], "../admin/assets/documents/" . $_FILES["proof"]["name"]);
-		$location3   =  $_FILES["proof"]["name"];
-	
 		
 		if($count !=0){
 			echo "<script> window.location.href='../register.php?duplicate'; </script>";
@@ -78,7 +59,7 @@ include('database.php');
 				$message = 'failed';
 			}
 			
-		$mysqli->query("INSERT INTO pos_customer (firstname,lastname,email,address,contact,password,username,valid_id,business_permit,proof) 
+		$mysqli->query("INSERT INTO pos_customer (firstname,lastname,email,address,contact,password,username) 
 								VALUES ('$firstname','$lastname','$email','$address','$contact','$password','$username','$location1','$location2','$location3')");
 		echo "<script> window.location.href='../login.php?registered'; </script>";
 		

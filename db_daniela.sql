@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2022 at 06:16 AM
+-- Generation Time: Dec 04, 2022 at 09:29 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -44,6 +44,13 @@ CREATE TABLE `pos_checkout_order` (
   `date_added` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `pos_checkout_order`
+--
+
+INSERT INTO `pos_checkout_order` (`checkout_id`, `customer_id`, `transcode`, `delivery_option`, `name`, `email`, `contact`, `address`, `status`, `is_paid`, `is_delivery`, `meal_status`, `is_rescheduled`, `date_added`) VALUES
+(1, 1, 'xw1JW9n6', 'Pick Up', '', '', '', '', 1, 0, 0, '', 0, '2022-12-04 08:12:22');
+
 -- --------------------------------------------------------
 
 --
@@ -63,6 +70,7 @@ CREATE TABLE `pos_customer` (
   `business_permit` text NOT NULL,
   `proof` text NOT NULL,
   `is_active` int(1) NOT NULL,
+  `is_verify` int(11) NOT NULL,
   `date_added` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -70,8 +78,8 @@ CREATE TABLE `pos_customer` (
 -- Dumping data for table `pos_customer`
 --
 
-INSERT INTO `pos_customer` (`customer_id`, `firstname`, `lastname`, `address`, `contact`, `email`, `username`, `password`, `valid_id`, `business_permit`, `proof`, `is_active`, `date_added`) VALUES
-(1, 'Jeffry', 'Bordeos', 'Blk 20 Lot 23 Phase 4 PBK Brgy Pasong Kawayan II\r\nddd', '9357396286', 'jeffrybordeos@gmail.com', 'kevinjayroluna', 'kevinjayroluna', 'logo.png', 'logo.png', 'logo.png', 1, '2022-12-04 04:00:48');
+INSERT INTO `pos_customer` (`customer_id`, `firstname`, `lastname`, `address`, `contact`, `email`, `username`, `password`, `valid_id`, `business_permit`, `proof`, `is_active`, `is_verify`, `date_added`) VALUES
+(1, 'Jeffry', 'Bordeos', 'Blk 20 Lot 23 Phase 4 PBK Brgy Pasong Kawayan II\r\nddd', '9357396286', 'jeffrybordeos@gmail.com', 'kevinjayroluna', 'kevinjayroluna', '1.JPG', '1', '1.JPG', 1, 0, '2022-12-04 04:00:48');
 
 -- --------------------------------------------------------
 
@@ -157,23 +165,8 @@ CREATE TABLE `pos_order` (
 --
 
 INSERT INTO `pos_order` (`order_id`, `customer_id`, `trans_code`, `item_id`, `qty`, `size`, `mdate`, `edate`, `status`, `created_by`, `created_at`) VALUES
-(5, 1, '1eDVG4Bl', 1, 1, 'small', '', '', 1, 0, '2022-12-01 06:17:20'),
-(7, 5, 'PTtAoedW', 13, 2, 'xxl', '', '', 0, 0, '2022-12-01 07:55:59'),
-(8, 5, 'PTtAoedW', 4, 1, 'small', '', '', 0, 0, '2022-12-01 08:09:58'),
-(9, 1, 'Y3axYXgu', 12, 1, 'small', '', '', 1, 0, '2022-12-01 09:55:45'),
-(10, 1, 'ARBXG9BC', 24, 1, 'meduim', '', '', 1, 0, '2022-12-01 11:11:49'),
-(12, 3, '3HAH5oqL', 9, 3, 'small', '', '', 0, 0, '2022-12-01 13:07:36'),
-(13, 3, 'ALUtFtRD', 14, 1, 'xxl', '', '', 0, 0, '2022-12-02 06:27:57'),
-(14, 7, '8CEI572i', 15, 1, 'meduim', '', '', 0, 0, '2022-12-02 13:00:59'),
-(17, 9, 'iTFhqZV2', 19, 1, 'small', '', '', 1, 0, '2022-12-02 14:30:49'),
-(18, 1, '3DWgs5Vl', 13, 1, 'small', '', '', 0, 0, '2022-12-02 14:45:36'),
-(19, 11, 'YlX7tW7B', 19, 1, 'large', '', '', 1, 0, '2022-12-02 14:59:01'),
-(20, 1, '6Dkix3Ug', 14, 1, 'xxxl', '', '', 0, 0, '2022-12-02 15:24:44'),
-(21, 1, '6Dkix3Ug', 19, 1, 'large', '', '', 0, 0, '2022-12-02 15:24:52'),
-(22, 1, '6Dkix3Ug', 13, 1, 'xxl', '', '', 0, 0, '2022-12-02 15:25:04'),
-(23, 1, '6Dkix3Ug', 20, 1, 'large', '', '', 0, 0, '2022-12-02 15:25:14'),
-(24, 1, '6Dkix3Ug', 23, 1, 'xl', '', '', 0, 0, '2022-12-02 15:25:23'),
-(25, 1, 'zRwpD7cz', 13, 1, 'xxl', '', '', 0, 0, '2022-12-02 23:42:19');
+(1, 1, 'cjfpKdKk', 1, 1, '', '', '', 1, 0, '2022-12-04 16:10:33'),
+(2, 1, 'xw1JW9n6', 1, 1, '', '', '', 1, 0, '2022-12-04 16:12:18');
 
 -- --------------------------------------------------------
 
@@ -279,7 +272,7 @@ ALTER TABLE `pos_users`
 -- AUTO_INCREMENT for table `pos_checkout_order`
 --
 ALTER TABLE `pos_checkout_order`
-  MODIFY `checkout_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `checkout_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pos_customer`
@@ -303,7 +296,7 @@ ALTER TABLE `pos_item_category`
 -- AUTO_INCREMENT for table `pos_order`
 --
 ALTER TABLE `pos_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pos_settings`

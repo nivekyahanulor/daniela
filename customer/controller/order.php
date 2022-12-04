@@ -57,28 +57,10 @@ if(isset($_POST['checkout-order'])){
 	$transcode	     = $_POST['transcode'];
 	$customerid      = $_POST['customerid'];
 	$delivery_option = $_POST['delivery_option'];
-	$meal_status     = $_POST['meal_status'];
+
 	
-	$checkdate       = $_POST['checkdate'];
-	$checktime       = $_POST['checktime'];
-	
-	$checkdatenow    = $_POST['checkdatenow'];
-	$checktimenow    = $_POST['checktimenow'];
-	
-	if($checkdate ==""){
-		$date = $_POST['checkdatenow'];
-	} else {
-		$date = $_POST['checkdate'];
-	}
-	
-	if($checktime == "" ){
-		$time = $_POST['checktimenow'];
-	} else {
-		$time = $_POST['checktime'];
-	}
-	
-	$mysqli->query("INSERT INTO pos_checkout_order (customer_id ,transcode, delivery_option,is_preorder,delivery_date,delivery_time,meal_status) 
-						VALUES ('$customerid','$transcode','$delivery_option','$is_preorder','$date','$time','$meal_status')");
+	$mysqli->query("INSERT INTO pos_checkout_order (customer_id ,transcode, delivery_option) 
+						VALUES ('$customerid','$transcode','$delivery_option')");
 		
 		
 	echo '<script>window.location.href="checkout.php?delivery='.$delivery_option.'"</script>';

@@ -77,7 +77,7 @@
               <h4 class="mb-2"> <?php echo $sval[1];?></h4>
               <p class="mb-4">Register your account</p>
 			</center>
-              <form id="formAuthentication" class="mb-3" method="post" action="controller/register.php" enctype="multipart/form-data">
+              <form id="formAuthentication" class="mb-3" method="post" action="controller/register.php">
 			  <h4> <b> Personal Information </b> </h4>
                 <div class="mb-3">
                   <label for="email" class="form-label">First Name</label>
@@ -130,33 +130,7 @@
 					required
                   /> </textarea>
                 </div> 
-				<hr>
-				<h4><b> Business Documents Information</b></h4>
-				<div class="mb-3">
-                  <label for="email" class="form-label">Valid ID</label>
-                  <input
-                    type="file"
-                    class="form-control"
-                    name="valid_id"
-                  />
-                </div>
-				<div class="mb-3">
-                  <label for="email" class="form-label">Business Permit</label>
-                  <input
-                    type="file"
-                    class="form-control"
-                    name="business_permit"
-                  />
-                </div>
-				<div class="mb-3">
-                  <label for="email" class="form-label">Image holding the  government ID's/Business Permit</label>
-                  <input
-                    type="file"
-                    class="form-control"
-                    name="proof"
-                    autofocus
-                  />
-                </div>
+				
 				
 				<hr>
 				<h4> <b> Account Information </b></h4>

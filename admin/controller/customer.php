@@ -48,6 +48,25 @@ if(isset($_POST['delete-customer'])){
 			</script>';
 	
 }
+if(isset($_POST['approved-customer'])){
+	
+	$id       = $_POST['id'];
+
+	$mysqli->query("UPDATE   pos_customer set is_verify = 1 where customer_id ='$id' ");
+	
+	
+	echo '  <script>
+					Swal.fire({
+							title: "Success! ",
+							text: " Customer is Successfully Approved",
+							icon: "success",
+							type: "success"
+							}).then(function(){
+								window.location = "customer.php";
+							});
+			</script>';
+	
+}
 
 if(isset($_POST['update-customer'])){
 	

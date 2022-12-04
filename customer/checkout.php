@@ -55,10 +55,12 @@
                             <h6 class="font-weight-medium">Subtotal</h6>
                             <h6 class="font-weight-medium">₱ <?php echo number_format($total,2);?></h6>
                         </div>
+						<?php if($_GET['delivery'] === 'Delivery'){?>
                         <div class="d-flex justify-content-between">
                             <h6 class="font-weight-medium">Shipping</h6>
                             <h6 class="font-weight-medium"> ₱ 100.00</h6>
                         </div>
+						<?php } ?>
                     </div>
                     <div class="card-footer border-secondary bg-transparent">
                         <div class="d-flex justify-content-between mt-2">

@@ -61,7 +61,9 @@
 							<select class="form-control" name="delivery_option" required>
 								<option value=""> - Select Type -  </option>
 								<option> Pick Up </option>
+								<?php if($_SESSION['is_verify'] ==1){?>
 								<option> Delivery </option>
+								<?php } ?>
 							</select>
 						</div>
 						</p>
@@ -70,10 +72,7 @@
                             <h6 class="font-weight-medium">Subtotal</h6>
                             <h6 class="font-weight-medium">₱ <?php echo number_format($total,2);?></h6>
                         </div>
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-medium">Shipping</h6>
-                            <h6 class="font-weight-medium"> ₱ 100.00</h6>
-                        </div>
+                     
                     </div>
                     <div class="card-footer border-secondary bg-transparent">
                         <div class="d-flex justify-content-between mt-2">

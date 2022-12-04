@@ -40,9 +40,10 @@
 			$transcode =  implode($pass);
 	
 			
-			$_SESSION['name']  = $row1['firstname'].' '. $row1['lastname'];
-			$_SESSION['id']    = $row1['customer_id'];
-			$_SESSION['address']    = $row1['address'];
+			$_SESSION['name'] 		  = $row1['firstname'].' '. $row1['lastname'];
+			$_SESSION['id']    		  = $row1['customer_id'];
+			$_SESSION['address']      = $row1['address'];
+			$_SESSION['is_verify']    = $row1['is_verify'];
 			$_SESSION['transcode']    = $transcode;
 			
 			header("location:../customer/index.php");
