@@ -21,10 +21,11 @@ if(isset($_POST['add-item'])){
 	$price          = $_POST['price'];
 	$category       = $_POST['category'];
 	$description    = $_POST['description'];
-	$stock        = $_POST['stock'];
-	$mdate        = $_POST['mdate'];
-	$edate        = $_POST['edate'];
-
+	$stock          = $_POST['stock'];
+	$mdate          = $_POST['mdate'];
+	$edate          = $_POST['edate'];
+	$is_new         = $_POST['is_new'];
+  
 	$image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
     $image_name = addslashes($_FILES['image']['name']);
     $image_size = getimagesize($_FILES['image']['tmp_name']);
@@ -32,8 +33,8 @@ if(isset($_POST['add-item'])){
 	$location   =  $_FILES["image"]["name"];
 	
 	
-	$mysqli->query("INSERT INTO pos_items (item_name ,item_price, category,image,stock,description,mdate,edate) 
-						VALUES ('$name','$price','$category','$location','$stock','$description','$mdate','$edate')");
+	$mysqli->query("INSERT INTO pos_items (item_name ,item_price, category,image,stock,description,mdate,edate,is_new) 
+						VALUES ('$name','$price','$category','$location','$stock','$description','$mdate','$edate','$is_new')");
 		
 		
 
@@ -81,6 +82,7 @@ if(isset($_POST['update-item'])){
 	$description    = $_POST['description'];
 	$mdate          = $_POST['mdate'];
 	$edate          = $_POST['edate'];
+	$is_new         = $_POST['is_new'];
 	
 	if ($letter == "") {
 		$image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
@@ -107,6 +109,7 @@ if(isset($_POST['update-item'])){
 										  description         = '$description',
 										  mdate               = '$mdate',
 										  edate               = '$edate',
+										  is_new              = '$is_new',
 										  image               = '$location'
 					WHERE item_id = '$id'");
 

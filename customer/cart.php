@@ -10,7 +10,6 @@
                             <th>Products</th>
                             <th>Price</th>
                             <th>Quantity</th>
-                            <th>Size</th>
                             <th>Total</th>
                             <th>Remove</th>
                         </tr>

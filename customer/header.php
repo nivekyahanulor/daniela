@@ -3,7 +3,7 @@
 <?php session_start();?>
 <head>
     <meta charset="utf-8">
-    <title>LIBRERALITY</title>
+    <title>DANIEAL RICE MILL</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<?php error_reporting(0); ?>
 	<?php
@@ -34,6 +34,63 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../assets/css/style.css" rel="stylesheet">
+	<style>
+	
+	.ribbon {
+		position: absolute;
+		right: -5px;
+		top: -5px;
+		z-index: 1;
+		overflow: hidden;
+		width: 75px;
+		height: 75px;
+		text-align: center;
+	}
+
+    .ribbon span {
+        font-size: 10px;
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
+        line-height: 20px;
+        transform: rotate(45deg);
+        width: 100px;
+        display: block;
+        background: #F62459;
+        background: linear-gradient(#ff89b1 0%, #ff006e 100%);
+        box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+        position: absolute;
+        top: 19px;
+        right: -21px;
+
+    }
+
+        .ribbon span::before {
+            content: '';
+            position: absolute;
+            left: 0%;
+            top: 100%;
+            z-index: -1;
+            border-left: 3px solid #F62459;
+            border-right: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+            border-top: 3px solid #F62459;
+        }
+
+        .ribbon span::after {
+            content: '';
+            position: absolute;
+            right: 0%;
+            top: 100%;
+            z-index: -1;
+            border-right: 3px solid #F62459;
+            border-left: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+            border-top: 3px solid #F62459;
+        }
+
+	</style>
 	</head>
 	<body>
     <!-- Topbar Start -->

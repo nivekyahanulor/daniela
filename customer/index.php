@@ -16,12 +16,17 @@
 				$products   = $mysqli->query("SELECT * from pos_items where item_name LIKE '%$product%'");
 			} else {
 				$id         = $_GET['data'];
-				$products   = $mysqli->query("SELECT * from pos_items where category='$id'");
+				$products   = $mysqli->query("SELECT * from pos_items where category='$id' order by mdate DESC");
 			}
 			while($valp = $products->fetch_object()){	
 			?>
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
+					<?php if($valp->is_new ==1){?>
+					 <div class="ribbon"><span>New Stock</span></div>
+					<?php } else {?>
+					 <div class="ribbon"><span>Old Stock</span></div>
+					<?php } ?>
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                         <img class="i" src="../admin/assets/menu/<?php echo $valp->image;?>" width="300px" height="300px">
                     </div>

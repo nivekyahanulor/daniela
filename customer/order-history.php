@@ -9,6 +9,7 @@
                                 <th data-priority="1">Transaction Code</th>
                                 <th>Total Price</th>
                                 <th>Status</th>
+                                <th>Date Ordered</th>
 
                             </tr>
                         </thead>
@@ -31,6 +32,7 @@
 								else if($val1->order_status==5){ echo 'Cancelled'; } 
 								else if($val1->order_status==6){ echo 'Completed'; } 
 								?></td>
+                                <td><a href="#" data-toggle="modal" data-target="#view-details<?php echo $val1->transcode;?>"><?php echo $val1->transcode;?></a></td>
                             </tr>
 							<div class="modal fade" id="view-details<?php echo $val1->transcode;?>"  role="dialog"  tabindex="-1">
 							<div class="modal-dialog modal-dialog-centered">

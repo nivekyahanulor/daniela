@@ -30,34 +30,34 @@ include('database.php');
 			echo "<script> window.location.href='../register.php?duplicate'; </script>";
 		} else {
 			
-			$mail = new PHPMailer();
-			$mail->isSMTP();
-			$mail->Host     = 'smtp.hostinger.com';
-			$mail->SMTPAuth = true;
-			$mail->Username = 'administrator@deniela.shop';
-			$mail->Password = '@Programmer2013';
-			$mail->SMTPSecure = 'ssl'; // tls
-			$mail->Port     = 465; // 587
-			$mail->setFrom('administrator@deniela.shop', 'DANIELA RICE MILL');
-			$mail->addAddress($email);
-			$mail->Subject = 'Account Confirmation';
-			$mail->isHTML(true);
+			// $mail = new PHPMailer();
+			// $mail->isSMTP();
+			// $mail->Host     = 'smtp.hostinger.com';
+			// $mail->SMTPAuth = true;
+			// $mail->Username = 'administrator@deniela.shop';
+			// $mail->Password = '@Programmer2013';
+			// $mail->SMTPSecure = 'ssl'; // tls
+			// $mail->Port     = 465; // 587
+			// $mail->setFrom('administrator@deniela.shop', 'DANIELA RICE MILL');
+			// $mail->addAddress($email);
+			// $mail->Subject = 'Account Confirmation';
+			// $mail->isHTML(true);
 
 
-			$mail->Body = "<html>
-								<body>
-									<h1>Hello , " .$name ." </h1>
-									<p> Thank you for registering to DANIELA RICE MILL</p>
-									<p> Kindly confirm your email address via the link below in order to start using your profile</p>
-									<p> <a href='http://deniela.shop/confirm.php?name=$name&email=$email'> Link Here </a> </p>
-								</body>
-							</html>";
+			// $mail->Body = "<html>
+								// <body>
+									// <h1>Hello , " .$name ." </h1>
+									// <p> Thank you for registering to DANIELA RICE MILL</p>
+									// <p> Kindly confirm your email address via the link below in order to start using your profile</p>
+									// <p> <a href='http://deniela.shop/confirm.php?name=$name&email=$email'> Link Here </a> </p>
+								// </body>
+							// </html>";
 
-			if ($mail->send()) {
-				$message = 'success';
-			} else {
-				$message = 'failed';
-			}
+			// if ($mail->send()) {
+				// $message = 'success';
+			// } else {
+				// $message = 'failed';
+			// }
 			
 		$mysqli->query("INSERT INTO pos_customer (firstname,lastname,email,address,contact,password,username) 
 								VALUES ('$firstname','$lastname','$email','$address','$contact','$password','$username','$location1','$location2','$location3')");

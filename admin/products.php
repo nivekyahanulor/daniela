@@ -20,6 +20,7 @@
                     <th scope="col"  class="text-center">Price</th>
                     <th scope="col"  class="text-center">Category</th>
                     <th scope="col"  class="text-center">Stocks </th>
+                    <th scope="col"  class="text-center">Stock Status </th>
                     <th scope="col"  class="text-center">Manufactured Date </th>
                     <th scope="col"  class="text-center">Expiration Date </th>
                     <th scope="col"  class="text-center">Date Added</th>
@@ -34,6 +35,7 @@
                     <td class="text-center"> ₱ <?php echo number_format($val->item_price,2);?></td>
                     <td class="text-center"><?php echo $val->category;?></td>
                     <td class="text-center"><?php echo $val->stock;?></td>
+                    <td class="text-center"><?php if( $val->is_new == 1){ echo "New Stock"; } else { echo "Old Stock";}?></td>
                     <td class="text-center"><?php echo $val->mdate;?></td>
                     <td class="text-center"><?php echo $val->edate;?></td>
                     <td class="text-center"><?php echo $val->date_added;?></td>
@@ -95,7 +97,18 @@
 							  <input type="file" class="form-control" name="image" id="item_price">
 							  <input type="hidden" class="form-control" name="image1"  value="<?php echo $val->image;?>" >
 							</div>
-							
+							<div class="col-12" id="item-category">
+							  <label for="inputNanme4" class="form-label"> Stock Status: </label>
+							  <select class="form-control" name="is_new"  required>
+								<?php if($val->is_new == '1'){?>
+									<option value="1" selected> New </option>
+									<option value="0"> Old </option>
+								<?php } else { ?>
+									<option value="1"> New </option>
+									<option value="0" selected> Old </option>
+								<?php } ?>
+							  </select>
+							</div>	
 							<div class="col-12">
 							  <label for="inputNanme4" class="form-label"> Manufactured Date: </label>
 							  <input type="date" class="form-control" name="mdate" value="<?php echo $val->mdate;?>" required>
@@ -193,6 +206,14 @@
 							  <label for="inputNanme4" class="form-label"> Image: </label>
 							  <input type="file" class="form-control" name="image" id="item_price"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
 							</div>
+							<div class="col-12" id="item-category">
+							  <label for="inputNanme4" class="form-label">New Stock : </label>
+							  <select class="form-control" name="is_new"  required>
+								<option value=""> - Select  - </option>
+								<option value="1"> New </option>
+								<option value="0"> Old </option>
+							  </select>
+							</div>	
 							<div class="col-12">
 							  <label for="inputNanme4" class="form-label"> Manufactured Date: </label>
 							  <input type="date" class="form-control" name="mdate" required>

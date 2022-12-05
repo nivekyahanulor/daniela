@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2022 at 09:29 AM
+-- Generation Time: Dec 05, 2022 at 11:57 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -49,7 +49,8 @@ CREATE TABLE `pos_checkout_order` (
 --
 
 INSERT INTO `pos_checkout_order` (`checkout_id`, `customer_id`, `transcode`, `delivery_option`, `name`, `email`, `contact`, `address`, `status`, `is_paid`, `is_delivery`, `meal_status`, `is_rescheduled`, `date_added`) VALUES
-(1, 1, 'xw1JW9n6', 'Pick Up', '', '', '', '', 1, 0, 0, '', 0, '2022-12-04 08:12:22');
+(1, 1, 'xw1JW9n6', 'Pick Up', '', '', '', '', 1, 0, 0, '', 0, '2022-12-04 08:12:22'),
+(2, 1, 'sWrZ5eBC', 'Pick Up', '', '', '', '', 1, 0, 0, '', 0, '2022-12-04 14:31:11');
 
 -- --------------------------------------------------------
 
@@ -100,7 +101,7 @@ CREATE TABLE `pos_items` (
   `xxl` int(11) NOT NULL,
   `xxxl` int(11) NOT NULL,
   `description` text NOT NULL,
-  `is_best_seller` int(11) NOT NULL,
+  `is_new` int(11) NOT NULL,
   `is_hot` int(11) NOT NULL,
   `image` text NOT NULL,
   `is_active` int(1) NOT NULL,
@@ -114,8 +115,10 @@ CREATE TABLE `pos_items` (
 -- Dumping data for table `pos_items`
 --
 
-INSERT INTO `pos_items` (`item_id`, `item_name`, `item_price`, `category`, `stock`, `small`, `meduim`, `large`, `xl`, `xxl`, `xxxl`, `description`, `is_best_seller`, `is_hot`, `image`, `is_active`, `mdate`, `edate`, `is_status`, `date_added`) VALUES
-(1, 'asd', '120', 2, 1111, 0, 0, 0, 0, 0, 0, 'asdasd', 0, 0, '1.JPG', 0, '2022-12-06', '2022-12-10', 0, '2022-12-04 05:06:22');
+INSERT INTO `pos_items` (`item_id`, `item_name`, `item_price`, `category`, `stock`, `small`, `meduim`, `large`, `xl`, `xxl`, `xxxl`, `description`, `is_new`, `is_hot`, `image`, `is_active`, `mdate`, `edate`, `is_status`, `date_added`) VALUES
+(1, 'asd', '120', 2, 1111, 0, 0, 0, 0, 0, 0, 'asdasd', 0, 0, '1.JPG', 0, '2022-12-06', '2022-12-10', 0, '2022-12-04 05:06:22'),
+(2, 'SAAA', '120', 1, 10, 0, 0, 0, 0, 0, 0, 'sadasd', 1, 0, '1.JPG', 0, '2022-12-04', '2022-12-08', 0, '2022-12-04 14:17:04'),
+(3, 'asd', '11', 2, 11, 0, 0, 0, 0, 0, 0, 'asdasd', 1, 0, '2b01a0ffdbe660b7808ead1a58d60e5a.jpg', 0, '2022-12-08', '2022-12-30', 0, '2022-12-04 14:30:50');
 
 -- --------------------------------------------------------
 
@@ -166,7 +169,8 @@ CREATE TABLE `pos_order` (
 
 INSERT INTO `pos_order` (`order_id`, `customer_id`, `trans_code`, `item_id`, `qty`, `size`, `mdate`, `edate`, `status`, `created_by`, `created_at`) VALUES
 (1, 1, 'cjfpKdKk', 1, 1, '', '', '', 1, 0, '2022-12-04 16:10:33'),
-(2, 1, 'xw1JW9n6', 1, 1, '', '', '', 1, 0, '2022-12-04 16:12:18');
+(2, 1, 'xw1JW9n6', 1, 1, '', '', '', 1, 0, '2022-12-04 16:12:18'),
+(3, 1, 'sWrZ5eBC', 3, 1, '', '', '', 1, 0, '2022-12-04 22:31:04');
 
 -- --------------------------------------------------------
 
@@ -272,7 +276,7 @@ ALTER TABLE `pos_users`
 -- AUTO_INCREMENT for table `pos_checkout_order`
 --
 ALTER TABLE `pos_checkout_order`
-  MODIFY `checkout_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `checkout_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pos_customer`
@@ -284,7 +288,7 @@ ALTER TABLE `pos_customer`
 -- AUTO_INCREMENT for table `pos_items`
 --
 ALTER TABLE `pos_items`
-  MODIFY `item_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `item_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `pos_item_category`
@@ -296,7 +300,7 @@ ALTER TABLE `pos_item_category`
 -- AUTO_INCREMENT for table `pos_order`
 --
 ALTER TABLE `pos_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `pos_settings`
