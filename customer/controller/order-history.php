@@ -27,6 +27,6 @@ if(isset($_POST['cancel-order'])){
 	$mysqli->query("UPDATE pos_checkout_order set status='5'  where transcode='$transcode'");
 		
 		
-	echo '<script>window.location.href="orders.php?cancelled"</script>';
+	echo '<script>window.location.href="order-history.php?cancelled"</script>';
 	
 }

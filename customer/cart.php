@@ -9,7 +9,7 @@
                         <tr>
                             <th>Products</th>
                             <th>Price</th>
-                            <th>Quantity</th>
+                            <th>Quantity <small>(Max. Order 250)</small></th>
                             <th>Total</th>
                             <th>Remove</th>
                         </tr>
@@ -24,18 +24,10 @@
 	                                <td><?php echo $val->item_name;?></td>   
 									<td>₱ <?php echo number_format($val->item_price,2);?></td>
 	                                <td>
-									<?php if($val->size == "small"){ $length = $val->small;}
-										  if($val->size == "meduim"){ $length = $val->meduim;}
-										  if($val->size == "large"){ $length = $val->large; }
-										  if($val->size == "xl"){$length = $val->xl;}
-										  if($val->size == "xxl"){$length = $val->xxl;}
-										  if($val->size == "xxxl"){$length = $val->xxxl;}
-										 ?>
-	                                  	<input type="number" name="cnt" class="" min="1" value="<?php echo $val->qty;?>" max="<?php echo $length;?>" style="width:70px" >	
+	                                  	<input type="number" name="cnt" class="" min="1" value="<?php echo $val->qty;?>" max="250" style="width:70px" >	
 	                                </td> 
 									
 	                                <td>₱ <?php echo number_format($val->item_price * $val->qty,2);?> </td>
-	                                <td><?php echo $val->size;?></td>   
 	                                <td> 
 	                                  	<input type="hidden" name="order_id" class="form-control" value="<?php echo $val->order_id;?>" >	
 										<button type="submit" class="btn btn-sm btn-info" name="update-cart"> Update </button> 

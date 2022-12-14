@@ -106,5 +106,5 @@
             
             </div>
             <!-- / Content -->
-
+			
     <?php include("footer.php");?>      

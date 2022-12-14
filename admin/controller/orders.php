@@ -82,22 +82,20 @@ if(isset($_POST['update-order'])){
 	
 	}
 	
-	
-		    $mail = new PHPMailer();
-			$mail->isSMTP();
-			$mail->Host     = 'smtp.hostinger.com';
-			$mail->SMTPAuth = true;
-			$mail->Username = 'administrator@deniela.shop';
-			$mail->Password = '@Programmer2013';
-			$mail->SMTPSecure = 'ssl'; // tls
-			$mail->Port     = 465; // 587
-			$mail->setFrom('administrator@deniela.shop', 'DANIELA RICE MILL');
-			$mail->addAddress($email);
-			$mail->Subject = 'Order Details';
-			$mail->isHTML(true);
+		   
+				$mail->Host = 'smtp-relay.sendinblue.com'; // SMTP host as gmail 
+				$mail->SMTPAuth = true;  // enable smtp authentication                             
+				$mail->Username = 'kevinjayroluna@gmail.com';  // sender gmail host              
+				$mail->Password = 'UIqzBvERCFGH9NTd'; // sender gmail host password                          
+				$mail->SMTPSecure = 'tls';  // for encrypted connection                           
+				$mail->Port = 587;   // port for SMTP     
 
+				$mail->setFrom('administrator@deniela.shop', "DANIELA RICE MILL"); // sender's email and name
+				$mail->addAddress($email);
 
-			$mail->Body = "<html>
+				$mail->Subject = 'Order Details';
+				
+				$mail->Body = "<html>
 								<body>
 									<h1>Hello , " .$name ." </h1>
 									<p> Your order status is ". $statuse." </p>
@@ -105,12 +103,13 @@ if(isset($_POST['update-order'])){
 								</body>
 							</html>";
 
-			if ($mail->send()) {
-				$message = 'success';
-			} else {
-				$message = 'failed';
+
+				$mail->send();
+				echo 'Message has been sent';
+			} catch (Exception $e) { // handle error.
+				echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 			}
-		
+					
 
   	        echo '<script>
 					Swal.fire({

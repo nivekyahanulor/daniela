@@ -50,7 +50,7 @@ $mysqli->query("UPDATE pos_customer set is_active = 1 where email='$email'");
 
               <div class="card">
 
-                <div class="card-body">
+                <div class="card-body" style="color:black;">
 					<br><br>
 					Your Account is confirmed!
 					<br>
@@ -63,7 +63,7 @@ $mysqli->query("UPDATE pos_customer set is_active = 1 where email='$email'");
 					
 					<br>
 					<br>
-					<a href="login.php"> LOGIN </a>
+					<a href="login.php" style="color:blue;"> LOGIN </a>
 					<br>
 
                 </div>

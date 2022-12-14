@@ -34,14 +34,15 @@
 				<p class="mb-4"><b>Manufacturing Date :</b> <br> <?php echo $valp->mdate;?></p>
                 <p class="mb-4"><b>Expiration Date :</b> <br> <?php echo $valp->edate;?></p>
                 <p class="mb-4"><b>Stock Status :</b> <br> <?php if( $valp->is_new == 1){ echo "New Stock"; } else { echo "Old Stock";}?></p>
+                <p class="mb-4"><b>Stock Quantity :</b> <br> <?php echo $valp->stock;?></p>
 				<hr>
                 
                 <div class="d-flex align-items-center mb-4 pt-2">
 					<input type="hidden" value="<?php echo $_GET['id'];?>" name="id">
 					<input type="hidden" value="<?php echo $valp->item_id;?>" name="item_id">
 					<input type="hidden" value="<?php echo $_SESSION['id'];?>" name="customer_id">
-					<?php $d  = $s + $m + $l + $xl + $xxl + $xxxl;
-						  if($d == 6){
+					<?php 
+						  if($valp->stock <= 0){
 					?>
 						<button type="button" class="btn btn-danger px-3"  name="add-order"><i class="fa fa-shopping-cart mr-1" ></i> Out of Stock</button>
 					<?php } else { ?>

@@ -37,7 +37,7 @@
     margin-right: 0.0625rem;
   }
   .layout-horizontal .bg-menu-theme .menu-inner > .menu-item .menu-sub {
-    box-shadow: 0 0.25rem 1rem rgba(161, 172, 184, 0.45);
+    box-shadow: 0 0.25rem 1rem rgba(135, 23, 23, 0.45);
   }
 }
 .layout-wrapper:not(.layout-horizontal) .bg-menu-theme .menu-inner > .menu-item.active:before {
@@ -132,10 +132,10 @@ a.bg-primary:hover, a.bg-primary:focus {
 .pagination li.active > a:not(.page-link),
 .pagination li.active > a:not(.page-link):hover,
 .pagination li.active > a:not(.page-link):focus {
-  border-color: #696cff;
-  background-color: #696cff;
+  border-color: #71dd37;
+  background-color: #71dd37;
   color: #fff;
-  box-shadow: 0 0.125rem 0.25rem rgba(105, 108, 255, 0.4);
+  box-shadow: 0 0.125rem 0.25rem rgba(20, 155, 69, 0.646);
 }
 
 .progress-bar {
@@ -206,15 +206,15 @@ button.list-group-item-primary.active {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #696cff;
-  border-color: #696cff;
-  box-shadow: 0 0.125rem 0.25rem 0 rgba(105, 108, 255, 0.4);
+  color: rgb(255, 255, 255);
+  background-color: #1F6421;
+  border-color: #1F6421;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(19, 189, 42, 0.4);
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #5f61e6;
-  border-color: #5f61e6;
+  background-color: #76ac77;
+  border-color: #044213;
   transform: translateY(-1px);
 }
 .btn-check:focus + .btn-primary, .btn-primary:focus, .btn-primary.focus {
@@ -296,11 +296,11 @@ button.list-group-item-primary.active {
 }
 
 .nav .nav-link:hover, .nav .nav-link:focus {
-  color: #5f61e6;
+  color: #b6f4c2;
 }
 
 .nav-pills .nav-link.active, .nav-pills .nav-link.active:hover, .nav-pills .nav-link.active:focus {
-  background-color: #696cff;
+  background-color: #71dd37;
   color: #fff;
   box-shadow: 0 2px 4px 0 rgba(105, 108, 255, 0.4);
 }
@@ -649,34 +649,36 @@ a:hover {
 }
 
 .bg-menu-theme {
-  background-color: #fff !important;
-  color: #697a8d;
+  background-color: #1f2605 !important;
+  color: #ffffff;
 }
 .bg-menu-theme .menu-link,
 .bg-menu-theme .menu-horizontal-prev,
 .bg-menu-theme .menu-horizontal-next {
-  color: #697a8d;
+  color: #ffffff;
 }
 .bg-menu-theme .menu-link:hover, .bg-menu-theme .menu-link:focus,
 .bg-menu-theme .menu-horizontal-prev:hover,
 .bg-menu-theme .menu-horizontal-prev:focus,
 .bg-menu-theme .menu-horizontal-next:hover,
 .bg-menu-theme .menu-horizontal-next:focus {
-  color: #566a7f;
+  color: #afe47b;
 }
 .bg-menu-theme .menu-link.active,
 .bg-menu-theme .menu-horizontal-prev.active,
 .bg-menu-theme .menu-horizontal-next.active {
-  color: #566a7f;
+  color: #afe47b;
 }
 .bg-menu-theme .menu-item.disabled .menu-link,
 .bg-menu-theme .menu-horizontal-prev.disabled,
 .bg-menu-theme .menu-horizontal-next.disabled {
   color: #a5afbb !important;
 }
+
+
 .bg-menu-theme .menu-item.open:not(.menu-item-closing) > .menu-toggle,
 .bg-menu-theme .menu-item.active > .menu-link {
-  color: #566a7f;
+  color: #9ad101;
 }
 .bg-menu-theme .menu-item.active > .menu-link:not(.menu-toggle) {
   background-color: #fff;
